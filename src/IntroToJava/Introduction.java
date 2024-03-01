@@ -8,7 +8,7 @@ public class Introduction {
         System.out.print("Print without new line");
     }
 
-    public static void printStartPattern () {
+    public static void printStarPattern () {
         System.out.println();
         System.out.println("Print a simpler star pattern"); // used for new line
         System.out.print("*\n**\n***\n****\n*****\n");
