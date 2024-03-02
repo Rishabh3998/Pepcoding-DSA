@@ -20,6 +20,7 @@ public class Main {
 //        AdhocProblems.countDigitsInNumber();
 //        AdhocProblems.printDigitsInNumber();
 //        AdhocProblems.printLastDigit();
-        AdhocProblems.reverseNumber();
+//        AdhocProblems.reverseNumber();
+        AdhocProblems.inverseOfNumber();
     }
 }

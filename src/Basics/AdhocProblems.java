@@ -204,4 +204,25 @@ public class AdhocProblems {
 
         System.out.println(reverse);
     }
+
+    public static void inverseOfNumber () {
+        // We hava a number, we have to find its inverse
+        // Assumption: if the range is 1 to 9 then the number will contain only digits between 1 and 9 included.
+        // No duplicates will exist
+
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+
+        int place = 1;
+        int inverse = 0;
+        while (number != 0){
+            int digit = number % 10;
+            int id = place;
+            int ip = digit;
+            inverse = inverse + (id * (int)Math.pow(10, ip - 1));
+            place++;
+            number /= 10;
+        }
+        System.out.println(inverse);
+    }
 }
