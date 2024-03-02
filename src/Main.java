@@ -15,6 +15,11 @@ public class Main {
 
 //        Basic Adhoc problems
 //        AdhocProblems.isPrimeNumber();
-        AdhocProblems.printAllPrimeTillN();
+//        AdhocProblems.printAllPrimeTillN();
+//        AdhocProblems.printFirstNFibonacciNumbers();
+//        AdhocProblems.countDigitsInNumber();
+//        AdhocProblems.printDigitsInNumber();
+//        AdhocProblems.printLastDigit();
+        AdhocProblems.reverseNumber();
     }
 }
