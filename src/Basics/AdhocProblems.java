@@ -12,7 +12,9 @@ public class AdhocProblems {
 
         // Approach 1: We are checking divisibility of entered number for every possible divisor here
         // Time complexity: O(testCases * number) = O(n^2)
-        // Hence TLE
+        // Hence TLE (Time limit exceeded)
+        // Computer can run 10 ^ 9 operations in 1 second
+        // The below code is taking longer then that
         //        for (int i = 0 ; i < testCases ; i++){
         //            int number = sc.nextInt();
         //

@@ -4,20 +4,38 @@ import java.util.Scanner;
 public class Introduction {
     public static void printOutput () {
         // How to print output in java
+
+        // println prints the statement and also print a new line
         System.out.println("Print with a new line");
+        // print only print the statement for new we have to add \n in the end of the statement
         System.out.print("Print without new line");
     }
 
     public static void printStarPattern () {
         System.out.println();
         System.out.println("Print a simpler star pattern"); // used for new line
+        // \n is used for new line
         System.out.print("*\n**\n***\n****\n*****\n");
+
+        // Output:
+        // *
+        // **
+        // ***
+        // ****
+        // *****
     }
 
     public static void printZPattern () {
         // Printing Z pattern
         System.out.println("Print a Z pattern"); // used for new line
         System.out.print("*****\n   *\n  *\n *\n*****\n");
+
+        // Output:
+        // *****
+        //    *
+        //   *
+        //  *
+        // *****
     }
 
     public static void printDataTypesInJava () {
@@ -137,13 +155,13 @@ public class Introduction {
         if(studentMarks > 90) {
             System.out.println("Excellent");
         }
-        else if (studentMarks > 80 && studentMarks <= 90) {
+        else if (studentMarks > 80) {
             System.out.println("Good");
         }
-        else if (studentMarks > 70 && studentMarks <= 80) {
+        else if (studentMarks > 70) {
             System.out.println("Fair");
         }
-        else if (studentMarks > 60 && studentMarks <= 70) {
+        else if (studentMarks > 60) {
             System.out.println("Meets expectations");
         }
         else {
