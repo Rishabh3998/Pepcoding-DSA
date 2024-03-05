@@ -30,6 +30,7 @@ public class Main {
 
 //        Patterns practice
 //        PatternsPractice.pattern1();
-        PatternsPractice.pattern2();
+//        PatternsPractice.pattern2();
+          PatternsPractice.pattern3();
     }
 }

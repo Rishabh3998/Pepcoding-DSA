@@ -45,4 +45,31 @@ public class PatternsPractice {
             System.out.println();
         }
     }
+
+    public static void pattern3 () {
+        // Print the pattern:
+        // Take n as an input
+        // print n number of rows where number of * is = nth column number - ith row
+
+        //     *
+        //    **
+        //   ***
+        //  ****
+        // *****
+
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        for (int i = 0 ; i < n ; i++) {
+            for (int j = 0 ; j <= n ; j++) {
+                if(j < n - i ) {
+                    System.out.print(" ");
+                }
+                if(j >= n - i) {
+                    System.out.print("*");
+                }
+            }
+            System.out.println();
+        }
+    }
 }
