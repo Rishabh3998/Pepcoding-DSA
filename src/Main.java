@@ -1,5 +1,6 @@
 import IntroToJava.Introduction;
 import Basics.AdhocProblems;
+import Patterns.PatternsPractice;
 public class Main {
     public static void main(String[] args) {
 //        Introduction to Java
@@ -25,7 +26,10 @@ public class Main {
 //        AdhocProblems.rotateNumber();
 //        AdhocProblems.gcdAndLcm();
 //        AdhocProblems.printPrimeFactors();
-        AdhocProblems.pythagoreanTriplet();
-    }
+//        AdhocProblems.pythagoreanTriplet();
 
+//        Patterns practice
+//        PatternsPractice.pattern1();
+        PatternsPractice.pattern2();
+    }
 }
