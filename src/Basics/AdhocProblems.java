@@ -227,4 +227,122 @@ public class AdhocProblems {
         }
         System.out.println(inverse);
     }
+
+    public static void rotateNumber () {
+        // We have a number, and we have to rotate it by the given number of rotation steps
+        // Every step take the last number and put it in the first place
+
+        // Example: 23457
+        // steps: 2
+        // Output: 57234
+
+        Scanner sc = new Scanner(System.in);
+        int number  = sc.nextInt();
+        int steps = sc.nextInt();
+
+        int temp = number;
+        int countDigits = 0;
+        while(temp != 0){
+            temp = temp / 10;
+            countDigits++;
+        }
+
+        // Here in the below step we are refactoring the input step if it is too large because
+        // eventually when steps get equal to the number of digit we will get the same number
+        // Therefore the multiple of number of digit will give the same number
+        // The number of rotation step = input steps % number of digits
+        steps = steps % countDigits;
+
+        // If the input is negative we will refactor the step again because the logic is same just change of direction
+        // is there. Eg: n = 12345, k = -2, o/p: 34512 which is similar to rotate the number by k = 3
+        // -ve steps + number of digits
+        if(steps < 0) {
+            steps += countDigits;
+        }
+
+        int div = 1;
+        int mul = 1;
+        // The below step is creating divisor and multiplier
+        // 12345, k = 2 => 2 will take the last 2 digit out, to take them out we need to take out the remainder
+        // of n which will be done by divisor. Now to add that last 2 digit in front we need to multiply it by the
+        // multiplier with same zeros having rest of the number input, i.e. countDigits - steps : 5 - 2 = 3
+        for (int i = 0 ; i < countDigits ; i++) {
+            if(i <= steps) {
+                div = div * 10;
+            } else {
+                mul = mul * 10;
+            }
+        }
+
+        int q = number / div;
+        int r = number % div;
+
+        int rotatingNumber = (r * mul) + q;
+        System.out.println(rotatingNumber);
+    }
+
+    public static void gcdAndLcm () {
+        Scanner sc = new Scanner(System.in);
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+
+        int on1 = num1;
+        int on2 = num2;
+
+        while (num1 % num2 != 0) {
+            int rem = num1 % num2;
+            num1 = num2;
+            num2 = rem;
+        }
+
+        int gcd = num2;
+        int lcm = (on1 * on2) / gcd;
+
+        System.out.println(gcd);
+        System.out.println(lcm);
+    }
+
+    public static void printPrimeFactors () {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+
+        for(int factor = 2 ; factor * factor <= number ; factor++){
+            while (number % factor == 0) {
+                number = number / factor;
+                System.out.print(factor + " ");
+            }
+        }
+
+        // This is the specific case
+        // Here to we are just checking if number != 1 and loop ends then this number is also a prime factor itself
+        if(number != 1){
+            System.out.print(number);
+        }
+    }
+
+    public static void pythagoreanTriplet () {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+
+        int max = Integer.max(a,b);
+        if (c > max){
+          max = c;
+        }
+
+        // here we are just checking if the formula is true or not
+        // P^2 + b^2 = h^2
+        if (max == a){
+            boolean flag = (b*b + c*c) == a*a;
+            System.out.println(flag);
+        } else if (max == b) {
+            boolean flag = (a*a + c*c) == b*b;
+            System.out.println(flag);
+        } else {
+            boolean flag = (b*b + a*a) == c*c;
+            System.out.println(flag);
+        }
+
+    }
 }

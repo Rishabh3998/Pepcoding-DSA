@@ -21,6 +21,11 @@ public class Main {
 //        AdhocProblems.printDigitsInNumber();
 //        AdhocProblems.printLastDigit();
 //        AdhocProblems.reverseNumber();
-        AdhocProblems.inverseOfNumber();
+//        AdhocProblems.inverseOfNumber();
+//        AdhocProblems.rotateNumber();
+//        AdhocProblems.gcdAndLcm();
+//        AdhocProblems.printPrimeFactors();
+        AdhocProblems.pythagoreanTriplet();
     }
+
 }

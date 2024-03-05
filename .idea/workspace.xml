@@ -7,7 +7,7 @@
     <list default="true" id="6f7d235d-abfb-4d7a-b5c8-f06ab4b7def0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Basics/AdhocProblems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Basics/AdhocProblems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IntroToJava/Introduction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IntroToJava/Introduction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +23,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 8
