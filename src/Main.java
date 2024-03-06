@@ -34,6 +34,10 @@ public class Main {
 //        PatternsPractice.pattern3();
 //        PatternsPractice.pattern4();
 //        PatternsPractice.pattern5();
-        PatternsPractice.pattern6();
+//        PatternsPractice.pattern6();
+//        PatternsPractice.pattern7();
+//        PatternsPractice.pattern8();
+//        PatternsPractice.pattern9();
+        PatternsPractice.pattern10();
     }
 }

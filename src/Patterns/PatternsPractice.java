@@ -197,4 +197,119 @@ public class PatternsPractice {
             System.out.println();
         }
     }
+
+    public static void pattern7 () {
+        // Print the pattern:
+        // Take n as an input
+        // print n number of rows where number of * will print i == j
+
+        //  *
+        //    *
+        //      *
+        //        *
+        //          *
+
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        for (int i = 0 ; i < n ; i++) {
+            for(int j = 0 ; j < n ; j++) {
+                if(i == j) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public static void pattern8 () {
+        // Print the pattern:
+        // Take n as an input
+        // print n number of rows where number of * will print where i + j == n+1 or the logic used below
+
+        //         *
+        //       *
+        //     *
+        //   *
+        // *
+
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        int space = n - 1;
+        for (int i = 0 ; i < n ; i++) {
+            for(int j = 0 ; j < space ; j++) {
+                System.out.print(" ");
+            }
+            System.out.print("*");
+            space--;
+            System.out.println();
+        }
+    }
+
+    public static void pattern9 () {
+        // Print the pattern:
+        // Take n as an input
+        // print n number of rows where number of * will print
+
+        // *       *
+        //   *   *
+        //     *
+        //   *   *
+        // *       *
+
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        for (int i = 0 ; i < n ; i++) {
+            for(int j = 0 ; j < n ; j++) {
+                if(i == j || i + j == n - 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public static void pattern10 () {
+        // Print the pattern:
+        // Take n as an input
+        // print n number of rows where number of * will print
+
+        //   *
+        //  * *
+        // *   *
+        //  * *
+        //   *
+
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        int os = n / 2;
+        int is = -1;
+        for (int i = 0 ; i < n ; i++) {
+            for(int j = 0 ; j < os ; j++) {
+                System.out.print(" ");
+            }
+            System.out.print("*");
+            for(int k = 0 ; k < is ; k++) {
+                System.out.print(" ");
+            }
+            if(i > 0 && i < n-1) {
+                System.out.print("*");
+            }
+            if(i < n / 2){
+                os--;
+                is += 2;
+            } else {
+                os++;
+                is -= 2;
+            }
+            System.out.println();
+        }
+    }
 }
