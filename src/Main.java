@@ -38,6 +38,10 @@ public class Main {
 //        PatternsPractice.pattern7();
 //        PatternsPractice.pattern8();
 //        PatternsPractice.pattern9();
-        PatternsPractice.pattern10();
+//        PatternsPractice.pattern10();
+//        PatternsPractice.pattern11();
+//        PatternsPractice.pattern12();
+//        PatternsPractice.pattern13();
+        PatternsPractice.printTableOfN();
     }
 }

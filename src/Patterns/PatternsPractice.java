@@ -312,4 +312,91 @@ public class PatternsPractice {
             System.out.println();
         }
     }
+
+    public static void pattern11 () {
+        // Print the pattern:
+        // Take n as an input
+        // print n number of rows where number of * is = row number
+
+        // 1
+        // 2 3
+        // 4 5 6
+        // 7 8 9 10
+        // 11 12 13 14 15
+
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        int number = 1;
+        for (int i = 0 ; i < n ; i++){
+            for (int j = 0 ; j <= i ; j++) {
+                System.out.print(number++ + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void pattern12 () {
+        // Print the pattern:
+        // Take n as an input
+        // print n number of rows every number belongs to the fibonacci series
+
+        // 0
+        // 1 1
+        // 2 3 5
+        // 8 13 21 34
+
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        int a = 0;
+        int b = 1;
+        for(int i = 0 ; i < n ; i++) {
+            for (int j = 0 ; j <= i ; j++) {
+                System.out.print(a + " ");
+                int result = a + b;
+                a = b;
+                b = result;
+
+            }
+            System.out.println();
+        }
+    }
+
+    public static void pattern13 () {
+        // Print the pattern:
+        // Take n as an input
+        // print n number of rows every number is icj (combination)
+
+        // n = 6
+        // 1
+        // 1 1
+        // 1 2 1
+        // 1 3 3 1
+        // 1 4 6 4 1
+        // 1 5 10 10 5 1
+
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        for (int i = 0 ; i < n ; i++) {
+            int icj = 1;
+            for (int j = 0 ; j <= i ; j++) {
+                System.out.print(icj + " ");
+                int icjp1 = icj * (i - j) / (j + 1);
+                icj = icjp1;
+            }
+            System.out.println();
+        }
+    }
+
+    public static void printTableOfN () {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        for(int i = 1 ; i <= 10 ; i++) {
+            System.out.println(n + " x " + i + " = " + n*i);
+        }
+    }
+
 }
