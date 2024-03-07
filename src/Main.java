@@ -63,14 +63,14 @@ public class Main {
         //        int converted = NumberSystem.decimalToAnyBase();
         //        System.out.println(converted);
         //        int converted = NumberSystem.anyBaseToDecimal();
-        //        System.out.println(converted);
+        //        System.out.println(converted);f
         //        int converted = NumberSystem.anyBaseToBase();
         //        System.out.println(converted);
         //        int converted = NumberSystem.anyBaseAddition();
         //        System.out.println(converted);
         //        int converted = NumberSystem.anyBaseSubtraction();
         //        System.out.println(converted);
-        int converted = NumberSystem.anyBaseMultiplication();
-        System.out.println(converted);
+        //        int converted = NumberSystem.anyBaseMultiplication();
+        //        System.out.println(converted);
     }
 }
