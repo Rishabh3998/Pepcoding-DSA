@@ -1,3 +1,4 @@
+import IntroNumberSystem.NumberSystem;
 import IntroToJava.Introduction;
 import Basics.AdhocProblems;
 import IntroductionToFunctions.Functions;
@@ -55,7 +56,21 @@ public class Main {
         //        int res = Functions.nPr(n, r);
         //        System.out.println(n + "P" + r + " = " + res);
 
-        int frequency = Functions.digitFrequency();
-        System.out.println(frequency);
+        //        int frequency = Functions.digitFrequency();
+        //        System.out.println(frequency);
+
+        //        ----Number System----
+        //        int converted = NumberSystem.decimalToAnyBase();
+        //        System.out.println(converted);
+        //        int converted = NumberSystem.anyBaseToDecimal();
+        //        System.out.println(converted);
+        //        int converted = NumberSystem.anyBaseToBase();
+        //        System.out.println(converted);
+        //        int converted = NumberSystem.anyBaseAddition();
+        //        System.out.println(converted);
+        //        int converted = NumberSystem.anyBaseSubtraction();
+        //        System.out.println(converted);
+        int converted = NumberSystem.anyBaseMultiplication();
+        System.out.println(converted);
     }
 }
