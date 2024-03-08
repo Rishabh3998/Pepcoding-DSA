@@ -1,5 +1,4 @@
 package IntroToArrays;
-
 import java.util.Scanner;
 
 public class Arrays {
@@ -79,5 +78,98 @@ public class Arrays {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
+    }
+
+    public static void spanOfArray () {
+        // span = maximum value in array - minimum value in array
+        Scanner sc = new Scanner(System.in);
+
+        int size = sc.nextInt();
+        int[] arr = new int[size];
+        for (int i = 0 ; i < arr.length ; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+
+        for (int i = 0 ; i < arr.length ; i++) {
+            // Find max
+            if(arr[i] > max) {
+                max = arr[i];
+            }
+            // Find min
+            if(arr[i] < min) {
+                min = arr[i];
+            }
+        }
+
+        int span = max - min;
+        System.out.println(span);
+    }
+
+    public static void findElement () {
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+
+        int[] arr = new int[size];
+        for (int i = 0 ; i < arr.length ; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int element = sc.nextInt();
+        int foundIndex = -1;
+        for (int i = 0 ; i < arr.length ; i++) {
+            if(arr[i] == element) {
+                foundIndex = i;
+                break;
+            }
+        }
+
+        System.out.println(foundIndex);
+    }
+
+    public static void barChart () {
+        //        5 (array size)
+        //        3 1 0 7 5  (array)
+        //        Bar Pattern:
+
+        //            *
+        //            *
+        //            * *
+        //            * *
+        //        *   * *
+        //        *   * *
+        //        * * * *
+
+        Scanner sc = new Scanner(System.in);
+
+        int size = sc.nextInt();
+        int[] arr = new int[size];
+        for (int i = 0 ; i < arr.length ; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Find max (Topmost level of bar)
+        int max = Integer.MIN_VALUE;
+        for (int i = 0 ; i < arr.length ; i++) {
+            if(arr[i] > max) {
+                max = arr[i];
+            }
+        }
+
+        // Print according to levels of bar
+        for(int i = 0 ; i < max ; i++) {
+            for (int j = 0 ; j < size ; j++) {
+                if(i >= max - arr[j]){
+                    // This condition is important:
+                    // * will only be there if max - arr[j] <= i
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
     }
 }

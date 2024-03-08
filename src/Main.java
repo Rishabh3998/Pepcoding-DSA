@@ -78,5 +78,8 @@ public class Main {
         //        Arrays.arrayPrintingWithInjectingInput();
         //        Arrays.shallowCopy();
         //        Arrays.deepCopy();
+        //        Arrays.spanOfArray();
+        //        Arrays.findElement();
+        //        Arrays.barChart();
     }
 }
