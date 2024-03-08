@@ -2,8 +2,8 @@ import IntroNumberSystem.NumberSystem;
 import IntroToJava.Introduction;
 import Basics.AdhocProblems;
 import IntroductionToFunctions.Functions;
+import IntroToArrays.Arrays;
 import Patterns.PatternsPractice;
-
 import java.util.Scanner;
 
 public class Main {
@@ -72,5 +72,11 @@ public class Main {
         //        System.out.println(converted);
         //        int converted = NumberSystem.anyBaseMultiplication();
         //        System.out.println(converted);
+
+        //        ----Introduction to Arrays----
+        //        Arrays.arrayDeclaration();
+        //        Arrays.arrayPrintingWithInjectingInput();
+        //        Arrays.shallowCopy();
+        //        Arrays.deepCopy();
     }
 }
