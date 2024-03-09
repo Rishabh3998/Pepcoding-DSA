@@ -85,5 +85,6 @@ public class Main {
         //        Arrays.differenceOfArrays();
         //        Arrays.reverseArray();
         //        Arrays.arrayInverse();
+        Arrays.rotateArray();
     }
 }

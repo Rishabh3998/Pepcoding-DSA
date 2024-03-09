@@ -325,4 +325,70 @@ public class Arrays {
             System.out.print(val + " ");
         }
     }
+
+    public static void reverseArrayWithInput (int[] arr, int i, int j ) {
+        while (i <= j) {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            i++;
+            j--;
+        }
+    }
+
+    public static void rotateArray () {
+        Scanner sc = new Scanner(System.in);
+
+        int size = sc.nextInt();
+        int[] arr = new int[size];
+
+        for(int i = 0 ; i < size ; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int steps = sc.nextInt();
+        steps = steps % size;
+
+        if(steps < 0) {
+            steps += size;
+        }
+
+        // Approach: 1
+
+        // This approach will take O(steps * size) time
+        // if steps = size eventually time will be O(size * size) => O(n ^ 2)
+        //        while (steps > 0) {
+        //            int temp = arr[size - 1];
+        //
+        //            // Transfer all the remaining elements in their new place
+        //            for (int i = size - 1 ; i > 0 ; i--) {
+        //                arr[i] = arr[i-1];
+        //            }
+        //
+        //            // Place the rotating candidate in the first place
+        //            arr[0] = temp;
+        //            steps--;
+        //        }
+
+        // Approach 2:
+
+        // steps = 3
+        //     ----part 1--      --part 2 (3 steps to perform)--
+        // Eg:  1 2 3 4 5 6  |         7 8 9
+        // Traditional waly output:  7 8 9 1 2 3 4 5 6
+
+        // Optimal way
+        // step 1: Reverse part 2 => 9 8 7
+        // step 2: Reverse part 1 => 6 5 4 3 2 1
+        // current array: 6 5 4 3 2 1 9 8 7
+        // step 3: Reverse whole array => 7 8 9 1 2 3 4 5 6 (Same as above)
+
+        reverseArrayWithInput(arr, size - steps , size - 1);
+        reverseArrayWithInput(arr, 0, size - 1 - steps);
+        reverseArrayWithInput(arr, 0, size - 1);
+
+        for (int val : arr) {
+            System.out.print(val + " ");
+        }
+    }
 }
