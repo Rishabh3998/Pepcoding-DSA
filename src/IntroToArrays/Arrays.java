@@ -223,4 +223,60 @@ public class Arrays {
             System.out.println(val);
         }
     }
+
+    public static void differenceOfArrays () {
+        Scanner sc = new Scanner(System.in);
+
+        int size1 = sc.nextInt();
+        int[] arr1 = new int[size1];
+        for(int i = 0 ; i < size1 ; i++) {
+            arr1[i] = sc.nextInt();
+        }
+
+        int size2 = sc.nextInt();
+        int[] arr2 = new int[size2];
+        for(int i = 0 ; i < size2 ; i++) {
+            arr2[i] = sc.nextInt();
+        }
+
+        int maxSize = Math.max(size1, size2);
+        int[] result = new int[maxSize];
+        int carry = 0;
+
+        int p1 = arr1.length - 1;
+        int p2 = arr2.length - 1;
+        int p3 = result.length - 1;
+
+        while (p3 >= 0) {
+            int d = 0;
+            int a1v = p1 >= 0 ? arr1[p1] : 0;
+
+            if(arr2[p2] + carry >= a1v) {
+                d = arr2[p2] + carry - a1v;
+                carry = 0;
+            } else {
+                d = arr2[p2] + carry + 10 - a1v;
+                carry = -1;
+            }
+
+            result[p3] = d;
+            p1--;
+            p2--;
+            p3--;
+        }
+
+        int idx = 0;
+        while (idx < result.length) {
+            if(result[idx] == 0) {
+                idx++;
+            } else {
+                break;
+            }
+        }
+
+        while (idx < result.length) {
+            System.out.println(result[idx]);
+            idx++;
+        }
+    }
 }
