@@ -83,5 +83,7 @@ public class Main {
         //        Arrays.barChart();
         //        Arrays.sumOfArrays();
         //        Arrays.differenceOfArrays();
+        //        Arrays.reverseArray();
+        //        Arrays.arrayInverse();
     }
 }
