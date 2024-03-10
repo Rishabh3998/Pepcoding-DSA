@@ -89,6 +89,8 @@ public class Main {
         //        Arrays.rotateArray();
 
         //        ----Introduction to Binary search----
-        BinarySearch.implementation();
+        //        BinarySearch.implementation();
+        //        BinarySearch.ceilAndFloor();
+        //        BinarySearch.firstAndLastIndex();
     }
 }
