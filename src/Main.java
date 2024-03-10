@@ -1,3 +1,4 @@
+import IntroBinarySearch.BinarySearch;
 import IntroNumberSystem.NumberSystem;
 import IntroToJava.Introduction;
 import Basics.AdhocProblems;
@@ -85,6 +86,9 @@ public class Main {
         //        Arrays.differenceOfArrays();
         //        Arrays.reverseArray();
         //        Arrays.arrayInverse();
-        Arrays.rotateArray();
+        //        Arrays.rotateArray();
+
+        //        ----Introduction to Binary search----
+        BinarySearch.implementation();
     }
 }
