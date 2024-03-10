@@ -391,4 +391,80 @@ public class Arrays {
             System.out.print(val + " ");
         }
     }
+
+    public static void subArrays () {
+        Scanner sc = new Scanner(System.in);
+
+        int size = sc.nextInt();
+        int[] arr = new int[size];
+
+        for (int i = 0 ; i < size ; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Find all sub-arrays
+        for (int i = 0 ; i < size ; i++) {
+            for (int j = i ; j < size ; j++) {
+                for (int k = i ; k <= j ; k++) {
+                    System.out.print(arr[k] + " ");
+                }
+                System.out.println();
+            }
+        }
+    }
+
+    public static void subSets () {
+        Scanner sc = new Scanner(System.in);
+
+        int size = sc.nextInt();
+        int[] arr = new int[size];
+
+        for (int i = 0 ; i < size ; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Possible number of sets are 2 ^ size of array
+        // example: [10, 20, 30]
+        // Total subsets = 2 ^ 3 (size of the array) = 8 subsets
+
+        // Concept:
+        // [1,2,3,4,5,6,7,8,9]
+
+        // i ---> 8 4 2 1 (Binary form)
+        // 1 ---> 0 0 0 1
+        // 2 ---> 0 0 1 0
+        // 3 ---> 0 0 1 1
+        // 4 ---> 0 1 0 0
+        // ...
+        // ...
+        // 9 ---> 1 0 0 1
+
+        int totalSubsets = (int)Math.pow(2, size);
+        for (int i = 0 ; i < totalSubsets ; i++) {
+            // convert i to binary and use 0's and 1's to know if to print the element or not
+            String set = "";
+            int temp = i;
+            for (int j = arr.length - 1 ; j >= 0 ; j--) {
+                // This loop is converting the i into binary form
+                // and, we know that after dividing the decimal base by 2 we have to read the remainders
+                // backwards to get the correct binary number that's why we are looping backwards from
+                // arr.length to 0
+
+                // 2 | 6 - 0
+                // 2 | 3 - 1
+                // 2 | 1 - 1
+                //   | 0
+
+                // Binary will be formed when we read remainders backwards i.e. 0 1 1 0
+                int r = temp % 2;
+                temp = temp / 2;
+                if (r == 0) {
+                    set = "_ " + set;
+                } else {
+                    set = arr[j] + " " + set;
+                }
+            }
+            System.out.println(set);
+        }
+    }
 }

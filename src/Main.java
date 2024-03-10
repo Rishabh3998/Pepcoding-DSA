@@ -87,6 +87,8 @@ public class Main {
         //        Arrays.reverseArray();
         //        Arrays.arrayInverse();
         //        Arrays.rotateArray();
+        //        Arrays.subArrays();
+        //        Arrays.subSets();
 
         //        ----Introduction to Binary search----
         //        BinarySearch.implementation();
