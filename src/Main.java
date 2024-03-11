@@ -98,5 +98,6 @@ public class Main {
 
         //        ----Intro to 2D Array----
         //        Arrays2D.display2DArray();
+        Arrays2D.matrixMultiplication();
     }
 }
