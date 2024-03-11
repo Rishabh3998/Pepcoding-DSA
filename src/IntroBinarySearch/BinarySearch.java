@@ -84,6 +84,8 @@ public class BinarySearch {
     }
 
     public static void firstAndLastIndex () {
+        // Here we need to find the first and the last index of the given number
+        // The array is sorted and duplicates of numbers can be present there.
         Scanner sc = new Scanner(System.in);
 
         int size = sc.nextInt();
