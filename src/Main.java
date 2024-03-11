@@ -1,3 +1,4 @@
+import Intro2DArrays.Arrays2D;
 import IntroBinarySearch.BinarySearch;
 import IntroNumberSystem.NumberSystem;
 import IntroToJava.Introduction;
@@ -94,5 +95,8 @@ public class Main {
         //        BinarySearch.implementation();
         //        BinarySearch.ceilAndFloor();
         //        BinarySearch.firstAndLastIndex();
+
+        //        ----Intro to 2D Array----
+        //        Arrays2D.display2DArray();
     }
 }
