@@ -73,4 +73,33 @@ public class Arrays2D {
             System.out.println();
         }
     }
+
+    public static void waveTraversal () {
+        Scanner sc = new Scanner(System.in);
+
+        int r = sc.nextInt();
+        int c = sc.nextInt();
+
+        int[][] arr = new int[r][c];
+        for (int i = 0 ; i < r ; i++) {
+            for (int j = 0 ; j < c ; j++) {
+                arr[i][j] = sc.nextInt();
+            }
+        }
+
+        // Wave traversal
+        // Columns are always increasing i.e. i
+        // Rows are increasing when j is even and decreasing when j is odd
+        for (int j = 0 ; j < arr[0].length ; j++) {
+            if(j % 2 == 0) {
+                for (int i = 0 ; i < arr.length  ; i++ ) {
+                    System.out.println(arr[i][j] + " ");
+                }
+            } else {
+                for (int i = arr.length - 1 ; i >= 0 ; i-- ) {
+                    System.out.println(arr[i][j] + " ");
+                }
+            }
+        }
+    }
 }
