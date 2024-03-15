@@ -104,10 +104,15 @@ public class Main {
 
         //        ----Intro to Recursion----
         Scanner sc = new Scanner(System.in);
+        //        int x = sc.nextInt();
         int n = sc.nextInt();
 
         //        Recursion.printDecreasing(n);
         //        Recursion.printIncreasing(n);
         //        Recursion.printDecreasingIncreasing(n);
+        //        int result = Recursion.findFactorial(n);
+        //        int result = Recursion.findXRaiseToN(x, n);
+        //        System.out.println(result);
+
     }
 }

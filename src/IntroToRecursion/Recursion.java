@@ -27,4 +27,18 @@ public class Recursion {
         printDecreasingIncreasing(n - 1);
         System.out.println(n);
     }
+
+    public static int findFactorial (int n) {
+        if(n == 0) {
+            return 1;
+        }
+        return n * findFactorial(n-1);
+    }
+
+    public static int findXRaiseToN (int x, int n) {
+        if(n == 0) {
+            return 1;
+        }
+        return x * findXRaiseToN(x, n-1);
+    }
 }
