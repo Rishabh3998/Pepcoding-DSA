@@ -3,6 +3,7 @@ import IntroBinarySearch.BinarySearch;
 import IntroNumberSystem.NumberSystem;
 import IntroToJava.Introduction;
 import Basics.AdhocProblems;
+import IntroToRecursion.Recursion;
 import IntroductionToFunctions.Functions;
 import IntroToArrays.Arrays;
 import Patterns.PatternsPractice;
@@ -100,5 +101,13 @@ public class Main {
         //        Arrays2D.display2DArray();
         //        Arrays2D.matrixMultiplication();
         //        Arrays2D.waveTraversal();
+
+        //        ----Intro to Recursion----
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        //        Recursion.printDecreasing(n);
+        //        Recursion.printIncreasing(n);
+        //        Recursion.printDecreasingIncreasing(n);
     }
 }
