@@ -39,6 +39,18 @@ public class Recursion {
         if(n == 0) {
             return 1;
         }
-        return x * findXRaiseToN(x, n-1);
+
+        // Approach 1:
+        // x ^ n = x * x ^ n - 1
+        // int result = x * findXRaiseToN(x, n-1);
+
+        // Approach 2:
+        // x ^ n = x ^ n / 2 * x ^ n / 2
+        int result = findXRaiseToN(x, n / 2) * findXRaiseToN(x, n / 2);
+        if(n % 2 == 0) {
+            return result;
+        } else {
+            return x * result;
+        }
     }
 }
