@@ -53,4 +53,24 @@ public class Recursion {
             return x * result;
         }
     }
+
+    public static void printUpperAndLowerPartRecursion (int n) {
+        if(n == 0) {
+            return;
+        }
+        System.out.println("Pre" + n);
+        printUpperAndLowerPartRecursion(n - 1);
+        System.out.println("In" + n);
+        printUpperAndLowerPartRecursion(n - 1);
+        System.out.println("Post" + n);
+    }
+
+    public static void towerOfHanoi (int n, char t1, char t2, char t3) {
+        if(n == 0) {
+            return;
+        }
+        towerOfHanoi(n-1, t1, t3, t2);
+        System.out.println(n + "[" + t1 + "->" + t2 + "]");
+        towerOfHanoi(n-1, t3, t2, t1);
+    }
 }

@@ -113,6 +113,7 @@ public class Main {
         //        int result = Recursion.findFactorial(n);
         //        int result = Recursion.findXRaiseToN(x, n);
         //        System.out.println(result);
-
+        //        Recursion.printUpperAndLowerPartRecursion(n);
+        //        Recursion.towerOfHanoi(n, 'A', 'B', 'C');
     }
 }
