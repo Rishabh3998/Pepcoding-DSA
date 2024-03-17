@@ -73,4 +73,20 @@ public class Recursion {
         System.out.println(n + "[" + t1 + "->" + t2 + "]");
         towerOfHanoi(n-1, t3, t2, t1);
     }
+
+    public static void printArray (int[] arr, int index) {
+        if (index == arr.length) {
+           return;
+        }
+        System.out.println(arr[index]);
+        printArray(arr, index + 1);
+    }
+
+    public static void printArrayInReverseOrder (int[] arr, int index) {
+        if(index < 0) {
+            return;
+        }
+        System.out.println(arr[index]);
+        printArrayInReverseOrder(arr, index - 1);
+    }
 }

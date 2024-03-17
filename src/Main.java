@@ -105,7 +105,12 @@ public class Main {
         //        ----Intro to Recursion----
         Scanner sc = new Scanner(System.in);
         //        int x = sc.nextInt();
-        int n = sc.nextInt();
+        //        int n = sc.nextInt();
+
+        int[] arr = new int[5];
+        for (int i = 0 ; i < 5 ; i++) {
+            arr[i] = sc.nextInt();
+        }
 
         //        Recursion.printDecreasing(n);
         //        Recursion.printIncreasing(n);
@@ -115,5 +120,7 @@ public class Main {
         //        System.out.println(result);
         //        Recursion.printUpperAndLowerPartRecursion(n);
         //        Recursion.towerOfHanoi(n, 'A', 'B', 'C');
+        //        Recursion.printArray(arr, 0);
+        //        Recursion.printArrayInReverseOrder(arr, arr.length - 1);
     }
 }
