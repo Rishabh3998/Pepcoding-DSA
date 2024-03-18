@@ -117,4 +117,37 @@ public class Recursion {
             return fi;
         }
     }
+
+    public static int lastIndex (int[] arr, int data, int index) {
+        if(index == arr.length - 1) {
+            if (arr[index] == data) {
+                return index;
+            } else {
+                return -1;
+            }
+        }
+        int li = lastIndex(arr, data, index + 1);
+        if (li == -1) {
+            if(arr[index] == data) {
+                return index;
+            } else {
+                return li;
+            }
+        }
+        return li;
+    }
+
+    public static int[] allIndicesOfElement (int[] arr, int data, int index, int fsf) {
+        if (index == arr.length) {
+            return new int[fsf];
+        }
+        if (arr[index] == data) {
+            int[] iArr = allIndicesOfElement(arr, data, index + 1, fsf + 1);
+            iArr[fsf] = index;
+            return iArr;
+        } else {
+            int[] iArr = allIndicesOfElement(arr, data, index + 1, fsf);
+            return iArr;
+        }
+    }
 }

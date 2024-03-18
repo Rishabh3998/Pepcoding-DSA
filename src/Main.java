@@ -123,7 +123,11 @@ public class Main {
         //        Recursion.printArray(arr, 0);
         //        Recursion.printArrayInReverseOrder(arr, arr.length - 1);
         //        int result = Recursion.maxOfArray(arr, 0);
-        int result = Recursion.firstIndex(arr, 99, 0);
-        System.out.println(result);
+        //        int result = Recursion.firstIndex(arr, 10, 0);
+        //        int result = Recursion.lastIndex(arr, 45, 0);
+        int[] result = Recursion.allIndicesOfElement(arr, 10, 0, 0);
+        for (int val : result) {
+            System.out.println(val);
+        }
     }
 }
