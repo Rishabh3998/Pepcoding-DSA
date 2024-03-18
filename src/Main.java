@@ -1,12 +1,16 @@
 import Intro2DArrays.Arrays2D;
 import IntroBinarySearch.BinarySearch;
 import IntroNumberSystem.NumberSystem;
+import IntroToArrayList.IntroArrayList;
 import IntroToJava.Introduction;
 import Basics.AdhocProblems;
 import IntroToRecursion.Recursion;
+import IntroToStrings.IntroStrings;
 import IntroductionToFunctions.Functions;
 import IntroToArrays.Arrays;
 import Patterns.PatternsPractice;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -103,14 +107,14 @@ public class Main {
         //        Arrays2D.waveTraversal();
 
         //        ----Intro to Recursion----
-        Scanner sc = new Scanner(System.in);
+        //        Scanner sc = new Scanner(System.in);
         //        int x = sc.nextInt();
         //        int n = sc.nextInt();
 
-        int[] arr = new int[11];
-        for (int i = 0 ; i < 11 ; i++) {
-            arr[i] = sc.nextInt();
-        }
+        //        int[] arr = new int[11];
+        //        for (int i = 0 ; i < 11 ; i++) {
+        //            arr[i] = sc.nextInt();
+        //        }
 
         //        Recursion.printDecreasing(n);
         //        Recursion.printIncreasing(n);
@@ -125,9 +129,17 @@ public class Main {
         //        int result = Recursion.maxOfArray(arr, 0);
         //        int result = Recursion.firstIndex(arr, 10, 0);
         //        int result = Recursion.lastIndex(arr, 45, 0);
-        int[] result = Recursion.allIndicesOfElement(arr, 10, 0, 0);
-        for (int val : result) {
-            System.out.println(val);
-        }
+        //        int[] result = Recursion.allIndicesOfElement(arr, 10, 0, 0);
+        ArrayList<String> result = Recursion.getSubsequence("abc");
+        System.out.println(result);
+        //        for (int val : result) {
+        //            System.out.println(val);
+        //        }
+
+        //        ----Intro to strings----
+        //        IntroStrings.stringIntroduction();
+
+        //        ----Intro to ArrayList----
+        //        IntroArrayList.ArrayListIntroduction();
     }
 }

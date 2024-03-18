@@ -1,5 +1,6 @@
 package IntroToRecursion;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Recursion {
@@ -149,5 +150,62 @@ public class Recursion {
             int[] iArr = allIndicesOfElement(arr, data, index + 1, fsf);
             return iArr;
         }
+    }
+
+    // We generally use recursion when we have to make a decision, whether to include an entity or not
+    // Every entity has 2 choice yes or no
+    // Example:
+    // Subsequence: 2 ^ n (total number of subsequence of a string)
+    // n represent the size/length of the given string
+
+    // Input: "abc"
+    // Output:
+    // _ _ _
+    // _ _ c
+    // _ b _
+    // _ b c
+    // a _ _
+    // a _ c
+    // a b _
+    // a b c
+
+    // Substring: (n * (n + 1)) / 2 (We can calculate total number of substring using this method)
+    // n represent the size/length of the given string
+
+    // Input: "abc"
+    // Output:
+    // a
+    // ab
+    // abc
+    // b
+    // bc
+    // c
+
+    public static ArrayList<String> getSubsequence (String str) {
+        // Base case:
+        if(str.isEmpty()) {
+            ArrayList<String> base = new ArrayList<String>();
+            base.add("");
+            return base;
+        }
+        // Step 1:
+        // Get first character 'a'
+        char ch = str.charAt(0);
+
+        // Step 2:
+        // Get string without this first character
+        String ros = str.substring(1); // [1, end]
+
+        // Step 3:
+        // Get the subsequences of rest of the string
+        ArrayList<String> rest = getSubsequence(ros);
+
+        ArrayList<String> mRes = new ArrayList<>();
+        for (String s : rest) {
+            mRes.add("_" + s);
+            mRes.add(ch + s);
+        }
+
+        return mRes;
     }
 }
