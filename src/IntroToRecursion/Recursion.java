@@ -89,4 +89,32 @@ public class Recursion {
         System.out.println(arr[index]);
         printArrayInReverseOrder(arr, index - 1);
     }
+
+    public static int maxOfArray (int[] arr, int index) {
+        if (index == arr.length - 1) {
+            return arr[index];
+        }
+        int max = maxOfArray(arr, index + 1);
+        if (arr[index] > max) {
+            return arr[index];
+        } else {
+            return max;
+        }
+    }
+
+    public static int firstIndex (int[] arr, int data, int index) {
+        if(index == arr.length - 1) {
+            if (arr[index] == data) {
+                return index;
+            } else {
+                return -1;
+            }
+        }
+        int fi = firstIndex(arr, data, index + 1);
+        if(arr[index] == data) {
+            return index;
+        } else {
+            return fi;
+        }
+    }
 }

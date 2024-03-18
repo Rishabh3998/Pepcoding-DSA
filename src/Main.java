@@ -107,8 +107,8 @@ public class Main {
         //        int x = sc.nextInt();
         //        int n = sc.nextInt();
 
-        int[] arr = new int[5];
-        for (int i = 0 ; i < 5 ; i++) {
+        int[] arr = new int[11];
+        for (int i = 0 ; i < 11 ; i++) {
             arr[i] = sc.nextInt();
         }
 
@@ -122,5 +122,8 @@ public class Main {
         //        Recursion.towerOfHanoi(n, 'A', 'B', 'C');
         //        Recursion.printArray(arr, 0);
         //        Recursion.printArrayInReverseOrder(arr, arr.length - 1);
+        //        int result = Recursion.maxOfArray(arr, 0);
+        int result = Recursion.firstIndex(arr, 99, 0);
+        System.out.println(result);
     }
 }
