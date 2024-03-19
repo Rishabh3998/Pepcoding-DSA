@@ -130,8 +130,8 @@ public class Main {
         //        int result = Recursion.firstIndex(arr, 10, 0);
         //        int result = Recursion.lastIndex(arr, 45, 0);
         //        int[] result = Recursion.allIndicesOfElement(arr, 10, 0, 0);
-        ArrayList<String> result = Recursion.getSubsequence("abc");
-        System.out.println(result);
+        //        ArrayList<String> result = Recursion.getSubsequence("abc");
+        //        System.out.println(result);
         //        for (int val : result) {
         //            System.out.println(val);
         //        }
