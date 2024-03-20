@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Recursion {
     static String[] keys = {".;", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tu", "vwx", "yz"};
+    static String[] allowedJumps = {"1","2","3"};
     public static void printDecreasing (int n) {
         if(n == 0) {
             return;
@@ -248,5 +249,32 @@ public class Recursion {
             }
         }
         return result;
+    }
+
+    public static ArrayList<String> getStairsPath (int n) {
+        // Allowed jumps [1,2,3] from any stair
+        if(n == 0) {
+            ArrayList<String> base = new ArrayList<>();
+            base.add("");
+            return base;
+        }
+        if (n < 0) {
+            return new ArrayList<>();
+        }
+        ArrayList<String> oneJump = getStairsPath(n-1);
+        ArrayList<String> twoJump = getStairsPath(n-2);
+        ArrayList<String> threeJump = getStairsPath(n-3);
+
+        ArrayList<String> totalWays = new ArrayList<>();
+        for (String first : oneJump) {
+            totalWays.add("1" + first);
+        }
+        for (String second : twoJump) {
+            totalWays.add("2" + second);
+        }
+        for (String third : threeJump) {
+            totalWays.add("3" + third);
+        }
+        return totalWays;
     }
 }

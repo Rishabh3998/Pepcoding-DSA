@@ -135,10 +135,16 @@ public class Main {
         //        for (int val : result) {
         //            System.out.println(val);
         //        }
+
+        //        Scanner sc = new Scanner(System.in);
+        //        String str = sc.next();
+        //        ArrayList<String> words = Recursion.getKeypadCombination(str);
+        //        System.out.println(words);
+
         Scanner sc = new Scanner(System.in);
-        String str = sc.next();
-        ArrayList<String> words = Recursion.getKeypadCombination(str);
-        System.out.println(words);
+        int num = sc.nextInt();
+        ArrayList<String> result = Recursion.getStairsPath(num);
+        System.out.println(result);
 
         //        ----Intro to strings----
         //        IntroStrings.stringIntroduction();
