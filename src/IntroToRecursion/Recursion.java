@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Recursion {
+    static String[] keys = {".;", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tu", "vwx", "yz"};
     public static void printDecreasing (int n) {
         if(n == 0) {
             return;
@@ -207,5 +208,45 @@ public class Recursion {
         }
 
         return mRes;
+    }
+
+    public static ArrayList<String> getKeypadCombination (String str) {
+        // Base case:
+        if(str.isEmpty()) {
+            ArrayList<String> baseArray = new ArrayList<String>();
+            baseArray.add("");
+            return baseArray;
+        }
+        // Step 1:
+        // Take out the first character of the string passed as argument
+        char ch = str.charAt(0);
+
+        // Step 2:
+        // Get the key set present for the passed string
+        String keySet = keys[Character.getNumericValue(ch)];
+
+        // Step 3:
+        // To get the answer for the substring cut the substring out from the overall string
+        String ros = str.substring(1);
+
+        // Step 4:
+        // Have faith in the logic and function that it will give the answer for the substring
+        ArrayList<String> rosResult = getKeypadCombination(ros);
+
+        // Step 5:
+        // Create resultant list
+        ArrayList<String> result = new ArrayList<>();
+
+        // Step 6:
+        // Loop through the key set
+        for (int i = 0 ; i < keySet.length() ; i++) {
+            // for each character of the key set
+            char chr = keySet.charAt(i);
+            for (String s : rosResult) {
+                // concatenate the current answer of the substring with the current character of the keyset
+                result.add(chr + s);
+            }
+        }
+        return result;
     }
 }

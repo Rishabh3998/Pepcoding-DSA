@@ -135,6 +135,10 @@ public class Main {
         //        for (int val : result) {
         //            System.out.println(val);
         //        }
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        ArrayList<String> words = Recursion.getKeypadCombination(str);
+        System.out.println(words);
 
         //        ----Intro to strings----
         //        IntroStrings.stringIntroduction();
