@@ -306,4 +306,40 @@ public class Recursion {
 
         return result;
     }
+
+    public static ArrayList<String> getMazePathsWithJumps (int sr, int sc, int dr, int dc) {
+        if(sr == dr && sc == dc) {
+            ArrayList<String> base = new ArrayList<>();
+            base.add("");
+            return base;
+        }
+
+        ArrayList<String> paths = new ArrayList<String>();
+
+        // All horizontal moves/paths with jumps
+        for (int h = 1 ; h <= dc - sc ; h++) {
+            ArrayList<String> hPaths = getMazePathsWithJumps(sr, sc + h, dr, dc);
+            for (String hPath : hPaths) {
+                paths.add("h" + h + hPath);
+            }
+        }
+
+        // All vertical moves/paths with jumps
+        for (int v = 1 ; v <= dr - sr ; v++) {
+            ArrayList<String> vPaths = getMazePathsWithJumps(sr + v, sc, dr, dc);
+            for (String vPath : vPaths) {
+                paths.add("v" + v + vPath);
+            }
+        }
+
+        // All diagonal moves/paths with jumps
+        for (int d = 1 ; d <= dr - sr && d <= dc - sc ; d++) {
+            ArrayList<String> dPaths = getMazePathsWithJumps(sr + d, sc + d, dr, dc);
+            for (String dPath : dPaths) {
+                paths.add("d" + d + dPath);
+            }
+        }
+
+        return paths;
+    }
 }

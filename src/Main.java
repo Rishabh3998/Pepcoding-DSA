@@ -146,14 +146,15 @@ public class Main {
         //        ArrayList<String> result = Recursion.getStairsPath(num);
         //        System.out.println(result);
 
-        Scanner scr = new Scanner(System.in);
-        int sr = scr.nextInt();
-        int sc = scr.nextInt();
-        int dr = scr.nextInt();
-        int dc = scr.nextInt();
+        //        Scanner scr = new Scanner(System.in);
+        //        int sr = scr.nextInt();
+        //        int sc = scr.nextInt();
+        //        int dr = scr.nextInt();
+        //        int dc = scr.nextInt();
 
-        ArrayList<String> result = Recursion.getMazePaths(sr, sc, dr, dc);
-        System.out.println(result);
+        //        ArrayList<String> result = Recursion.getMazePaths(sr, sc, dr, dc);
+        //        ArrayList<String> result = Recursion.getMazePathsWithJumps(sr, sc, dr, dc);
+        //        System.out.println(result);
 
         //        ----Intro to strings----
         //        IntroStrings.stringIntroduction();
