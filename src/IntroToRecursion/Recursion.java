@@ -277,4 +277,33 @@ public class Recursion {
         }
         return totalWays;
     }
+
+    public static ArrayList<String> getMazePaths (int sr, int sc, int dr, int dc) {
+        if(sr == dr && sc == dc) {
+            ArrayList<String> base = new ArrayList<String>();
+            base.add("");
+            return base;
+        }
+
+        ArrayList<String> allHorizontal = new ArrayList<String>();
+        ArrayList<String> allVertical = new ArrayList<String>();
+
+        if (sc < dc) {
+             allHorizontal = getMazePaths(sr, sc + 1, dr, dc);
+        }
+
+        if (sr < dr) {
+             allVertical = getMazePaths(sr + 1, sc, dr, dc);
+        }
+
+        ArrayList<String> result = new ArrayList<String>();
+        for (String s : allHorizontal) {
+            result.add("h" + s);
+        }
+        for (String s : allVertical) {
+            result.add("v" + s);
+        }
+
+        return result;
+    }
 }

@@ -141,9 +141,18 @@ public class Main {
         //        ArrayList<String> words = Recursion.getKeypadCombination(str);
         //        System.out.println(words);
 
-        Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
-        ArrayList<String> result = Recursion.getStairsPath(num);
+        //        Scanner sc = new Scanner(System.in);
+        //        int num = sc.nextInt();
+        //        ArrayList<String> result = Recursion.getStairsPath(num);
+        //        System.out.println(result);
+
+        Scanner scr = new Scanner(System.in);
+        int sr = scr.nextInt();
+        int sc = scr.nextInt();
+        int dr = scr.nextInt();
+        int dc = scr.nextInt();
+
+        ArrayList<String> result = Recursion.getMazePaths(sr, sc, dr, dc);
         System.out.println(result);
 
         //        ----Intro to strings----
