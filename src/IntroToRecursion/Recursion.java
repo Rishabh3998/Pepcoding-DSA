@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class Recursion {
     static String[] keys = {".;", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tu", "vwx", "yz"};
-    static String[] allowedJumps = {"1","2","3"};
     public static void printDecreasing (int n) {
         if(n == 0) {
             return;
@@ -244,7 +243,7 @@ public class Recursion {
             // for each character of the key set
             char chr = keySet.charAt(i);
             for (String s : rosResult) {
-                // concatenate the current answer of the substring with the current character of the keyset
+                // concatenate the current answer of the substring with the current character of the key-set
                 result.add(chr + s);
             }
         }
@@ -339,7 +338,76 @@ public class Recursion {
                 paths.add("d" + d + dPath);
             }
         }
-
         return paths;
+    }
+    public static void printSubsequence (String quesString, String ansString) {
+        // When we try to find all the subsequences and at the end store them in ArrayList<String>
+        // The total number of subsequences that can be formed can be calculated by 2 ^ n
+        // 2 ^ n subsequences are there of a string
+        // total number of pairs of these subsequences will be ( 2 ^ n ) / 2 pairs
+        // each subsequence has n characters so total number of characters present in ArrayList
+        // will be 2 ^ n - 1 * n characters
+
+        // For 31 length string
+        // 2 ^ 31 - 1 * 31 = ( 2 ^ 10 ) ^ 3 * 31 = 31 * 10 ^ 9 characters
+        // 1 char = 1 byte => 31 * 10 ^ 9 bytes => 31GB (Result)
+
+        // So due this large amount of space required to get subsequence we cannot store them before returning
+        // But we can print them while creating a subsequence
+
+        // Base case:
+        if (quesString.isEmpty()) {
+            System.out.println(ansString);
+            return;
+        }
+
+        char ch = quesString.charAt(0);
+        String roq = quesString.substring(1);
+
+        printSubsequence(roq, ansString + ch);
+        printSubsequence(roq, ansString + "_");
+    }
+
+    public static void printKeyPadCombination (String quesString, String ansString) {
+
+        if (quesString.isEmpty()) {
+            System.out.println(ansString);
+            return;
+        }
+
+        char ch = quesString.charAt(0);
+        String roq = quesString.substring(1);
+        String keySets = keys[ch - '0'];
+
+        for (int i = 0 ; i < keySets.length() ; i++) {
+            char current = keySets.charAt(i);
+            printKeyPadCombination(roq, ansString + current); // key-set will be added everytime
+        }
+    }
+
+    public static void printStairPaths (int n , String path) {
+        if(n == 0) {
+            System.out.println(path);
+            return;
+        } else if (n < 0) {
+            return;
+        }
+        for (int i = 1 ; i <= 3 ; i++) {
+            printStairPaths(n - i, path + i);
+        }
+    }
+
+    public static void printMazePaths (int sr, int sc, int dr, int dc, String path) {
+        if (sr > dr || sc > dc) {
+            return;
+        }
+        if (sr == dr && sc == dc) {
+            System.out.println(path);
+            return;
+        }
+        // all possible horizontal paths
+        printMazePaths(sr + 1, sc, dr, dc, path + "h");
+        // all possible vertical paths
+        printMazePaths(sr, sc + 1, dr, dc, path + "v");
     }
 }

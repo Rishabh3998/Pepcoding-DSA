@@ -26,7 +26,5 @@ public class IntroArrayList {
         for (int val : list) {
             System.out.print(val + " ");
         }
-
-
     }
 }

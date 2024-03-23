@@ -156,6 +156,12 @@ public class Main {
         //        ArrayList<String> result = Recursion.getMazePathsWithJumps(sr, sc, dr, dc);
         //        System.out.println(result);
 
+        //        Recursion.printSubsequence("abc", "");
+        //        Recursion.printKeyPadCombination("678", "");
+
+        //        Recursion.printStairPaths(3, "");
+        //        Recursion.printMazePaths(1, 1, 3, 3, "");
+
         //        ----Intro to strings----
         //        IntroStrings.stringIntroduction();
 
