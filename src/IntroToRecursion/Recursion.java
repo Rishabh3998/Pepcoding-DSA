@@ -512,4 +512,15 @@ public class Recursion {
         floodFill(maze, row, col + 1, ans + "r", visited);
         visited[row][col] = false;
     }
+
+    public static void printTargetSumSubsets (int[] arr, int idx, String set, int sos, int tar) {
+        if(idx == arr.length) {
+            if(sos == tar) {
+                System.out.println(set + ".");
+            }
+            return;
+        }
+        printTargetSumSubsets(arr, idx + 1, set + arr[idx] + ", " , sos + arr[idx], tar);
+        printTargetSumSubsets(arr, idx + 1, set , sos, tar);
+    }
 }
