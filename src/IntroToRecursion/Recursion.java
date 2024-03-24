@@ -410,4 +410,46 @@ public class Recursion {
         // all possible vertical paths
         printMazePaths(sr, sc + 1, dr, dc, path + "v");
     }
+
+    public static void printMazePathWithJumps (int sr, int sc, int dr, int dc, String path) {
+        if(sr == dr && sc == dc) {
+            System.out.print(path + " ");
+            return;
+        }
+
+        // All horizontal moves/paths with jumps
+        for (int h = 1 ; h <= dc - sc ; h++) {
+            printMazePathWithJumps(sr, sc + h, dr, dc, path + "h" + h);
+        }
+
+        // All vertical moves/paths with jumps
+        for (int v = 1 ; v <= dr - sr ; v++) {
+            printMazePathWithJumps(sr + v, sc, dr, dc, path + "v" + v);
+        }
+
+        // All diagonal moves/paths with jumps
+        for (int d = 1 ; d <= dr - sr && d <= dc - sc ; d++) {
+            printMazePathWithJumps(sr + d, sc + d, dr, dc, path + "d" + d);
+        }
+    }
+
+    public static void printPermutations (String ques, String ans) {
+        // number of permutations =  n! (n => length of string)
+        // Total number of permutations for string with 3 length =  3! = 3*2*1 = 6
+        // Example:
+        // Input: abc
+        // Output:
+        // abc, bac, cab, acb, bca, cba
+
+        if(ques.isEmpty()){
+            System.out.println(ans);
+            return;
+        }
+
+        for (int i = 0 ; i < ques.length() ; i++) {
+            char ch = ques.charAt(i);
+            String roq = ques.replace(Character.toString(ch) , "");
+            printPermutations(roq, ans + ch);
+        }
+    }
 }

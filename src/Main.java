@@ -161,6 +161,8 @@ public class Main {
 
         //        Recursion.printStairPaths(3, "");
         //        Recursion.printMazePaths(1, 1, 3, 3, "");
+        //        Recursion.printMazePathWithJumps(1,1,3,3, "");
+        //        Recursion.printPermutations("abc", "");
 
         //        ----Intro to strings----
         //        IntroStrings.stringIntroduction();
