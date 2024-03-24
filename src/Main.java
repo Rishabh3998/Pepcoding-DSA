@@ -163,6 +163,21 @@ public class Main {
         //        Recursion.printMazePaths(1, 1, 3, 3, "");
         //        Recursion.printMazePathWithJumps(1,1,3,3, "");
         //        Recursion.printPermutations("abc", "");
+        //        Recursion.printEncodings("123", "");
+
+        //        Scanner sc = new Scanner(System.in);
+        //        int n = sc.nextInt();
+        //        int m = sc.nextInt();
+        //        int[][] maze = new int[n][m];
+        //
+        //        for (int i = 0 ; i < maze.length ; i++) {
+        //            for (int j = 0 ; j < maze[0].length ; j++) {
+        //                maze[i][j] = sc.nextInt();
+        //            }
+        //        }
+        //
+        //        boolean[][] visited = new boolean[n][m];
+        //        Recursion.floodFill(maze, 0, 0, "", visited);
 
         //        ----Intro to strings----
         //        IntroStrings.stringIntroduction();

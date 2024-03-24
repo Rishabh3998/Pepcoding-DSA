@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Recursion {
     static String[] keys = {".;", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tu", "vwx", "yz"};
+    static String[] encodings = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
     public static void printDecreasing (int n) {
         if(n == 0) {
             return;
@@ -451,5 +452,64 @@ public class Recursion {
             String roq = ques.replace(Character.toString(ch) , "");
             printPermutations(roq, ans + ch);
         }
+    }
+
+    public static void printEncodings (String ques, String ans) {
+        if(ques.isEmpty()) {
+            System.out.println(ans);
+            return;
+        } else if (ques.length() == 1) {
+            char ch = ques.charAt(0);
+            if(ch == '0') {
+                return;
+            } else {
+                int chv = ch - '0';
+                char code = (char)('a' + chv - 1);
+                System.out.println(ans + code);
+            }
+        } else {
+            char ch = ques.charAt(0);
+            String roq = ques.substring(1);
+
+            if(ch == '0') {
+                return;
+            } else {
+                int chv = ch - '0';
+                char code = (char)('a' + chv - 1);
+                printEncodings(roq, ans + code);
+            }
+
+            String ch12 = ques.substring(0, 2);
+            String roq2 = ques.substring(2);
+            int ch12v = Integer.parseInt(ch12);
+            if(ch12v <= 26) {
+                char code = (char)('a' + ch12v - 1);
+                printEncodings(roq2, ans + code);
+            }
+        }
+    }
+
+    public static void floodFill (int[][] maze, int row, int col, String ans, boolean[][] visited) {
+        // Smart base case
+        if(row < 0 || col < 0 || row == maze.length || col == maze[0].length || maze[row][col] == 1 || visited[row][col]) {
+            return;
+        }
+
+        if(row == maze.length - 1 && col == maze[0].length - 1) {
+            System.out.println(ans);
+            return;
+        }
+
+        // marking a visited cell
+        visited[row][col] = true;
+        // top traversal call
+        floodFill(maze, row - 1, col, ans + "t", visited);
+        // left traversal call
+        floodFill(maze, row, col - 1, ans + "l", visited);
+        // down traversal call
+        floodFill(maze, row + 1, col, ans + "d", visited);
+        // right traversal call
+        floodFill(maze, row, col + 1, ans + "r", visited);
+        visited[row][col] = false;
     }
 }
