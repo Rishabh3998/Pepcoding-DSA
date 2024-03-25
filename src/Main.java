@@ -196,7 +196,13 @@ public class Main {
         list.addLast(40);
         list.addLast(50);
         //        IntroLinkedList.testLinkedList(list);
-        System.out.println(list.size());
-        list.display();
+        //        System.out.println(list.size());
+        //        list.display();
+        //        list.removeFirst();
+        //        System.out.println(list.size());
+        //        list.display();
+        //        System.out.println(list.getFirst());
+        //        System.out.println(list.getLast());
+        //        System.out.println(list.getAt(0));
     }
 }

@@ -105,6 +105,60 @@ public class IntroLinkedList {
                 temp = temp.next;
             }
         }
+
+        public void removeFirst () {
+            if (size == 0) {
+                System.out.println("Empty list");
+            }
+            else if (size == 1) {
+                head = tail = null;
+                size = 0;
+            }
+            else {
+                // create a temp pointer
+                Node temp = new Node();
+                // point temp on head
+                temp = head;
+                // head = head.next
+                head = head.next;
+                // temp.next = null
+                temp.next = null;
+                // reduce size
+                size--;
+            }
+        }
+
+        public int getFirst () {
+            if(size == 0) {
+                System.out.println("List is empty");
+                return -1;
+            }
+            return head.data;
+        }
+
+        public int getLast () {
+            if(size == 0) {
+                System.out.println("List is empty");
+                return -1;
+            }
+            return tail.data;
+        }
+
+        public int getAt (int index) {
+            if(size == 0) {
+                System.out.println("List is empty");
+                return -1;
+            }
+            else if (index < 0 || index >= size) {
+                System.out.println("Invalid arguments");
+                return -1;
+            }
+            Node temp = head;
+            for (int i = 0 ; i < index ; i++) {
+                temp = temp.next;
+            }
+            return temp.data;
+        }
     }
 
     public static void testLinkedList (LinkedList list) {
