@@ -170,6 +170,34 @@ public class IntroLinkedList {
             }
             size++;
         }
+
+        public void addAt (int idx, int val) {
+            if (idx < 0 || idx > size) {
+                System.out.println("Invalid arguments");
+            }
+            else if (idx == 0) {
+                addFirst(val);
+            } else if (idx == size) {
+                addLast(val);
+            }
+            else {
+                // Create a new node
+                Node node = new Node();
+                // set its value
+                node.data = val;
+
+                // create a pointer pointing on head
+                Node temp = head;
+                // Traverse through list
+                for (int i = 0; i < idx - 1; i++) {
+                    temp = temp.next;
+                }
+
+                node.next = temp.next;
+                temp.next = node;
+                size++;
+            }
+        }
     }
 
     public static void testLinkedList (LinkedList list) {

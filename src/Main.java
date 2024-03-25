@@ -204,8 +204,9 @@ public class Main {
         //        System.out.println(list.getFirst());
         //        System.out.println(list.getLast());
         //        System.out.println(list.getAt(0));
-        list.addFirst(69);
-        list.addFirst(696);
+        //        list.addFirst(69);
+        //        list.addFirst(696);
+        list.addAt(1, 69);
         list.display();
     }
 }
