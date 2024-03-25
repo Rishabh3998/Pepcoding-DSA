@@ -159,6 +159,17 @@ public class IntroLinkedList {
             }
             return temp.data;
         }
+
+        public void addFirst (int val) {
+            Node temp = new Node();
+            temp.data = val;
+            temp.next = head;
+            head = temp;
+            if(size == 0) {
+                tail = temp;
+            }
+            size++;
+        }
     }
 
     public static void testLinkedList (LinkedList list) {
