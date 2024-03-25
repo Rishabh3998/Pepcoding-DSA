@@ -4,6 +4,7 @@ import IntroNumberSystem.NumberSystem;
 import IntroToArrayList.IntroArrayList;
 import IntroToJava.Introduction;
 import Basics.AdhocProblems;
+import IntroToLinkedList.IntroLinkedList;
 import IntroToRecursion.Recursion;
 import IntroToStrings.IntroStrings;
 import IntroductionToFunctions.Functions;
@@ -186,5 +187,13 @@ public class Main {
 
         //        ----Intro to ArrayList----
         //        IntroArrayList.ArrayListIntroduction();
+
+        //        ----Intro to LinkedList----
+        IntroLinkedList.LinkedList list = new IntroLinkedList.LinkedList();
+        list.addLast(10);
+        list.addLast(20);
+        list.addLast(30);
+        list.addLast(40);
+        IntroLinkedList.testLinkedList(list);
     }
 }
