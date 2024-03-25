@@ -194,6 +194,9 @@ public class Main {
         list.addLast(20);
         list.addLast(30);
         list.addLast(40);
-        IntroLinkedList.testLinkedList(list);
+        list.addLast(50);
+        //        IntroLinkedList.testLinkedList(list);
+        System.out.println(list.size());
+        list.display();
     }
 }

@@ -87,6 +87,24 @@ public class IntroLinkedList {
             // increase size
             size++;
         }
+
+        public int size () {
+            return size;
+        }
+
+        public void display () {
+            // using for loop
+            // for (Node temp = head ; temp != null ; temp = temp.next) {
+            //    System.out.println(temp.data);
+            // }
+
+            // using while loop
+            Node temp = head;
+            while (temp != null) {
+                System.out.println(temp.data);
+                temp = temp.next;
+            }
+        }
     }
 
     public static void testLinkedList (LinkedList list) {
