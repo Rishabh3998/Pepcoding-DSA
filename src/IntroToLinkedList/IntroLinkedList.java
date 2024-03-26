@@ -243,6 +243,22 @@ public class IntroLinkedList {
                 ri--;
             }
         }
+
+        public void reverseLinkedListOptimal () {
+            Node prev = null;
+            Node curr = head;
+
+            while (curr != null) {
+                Node temp = curr.next;
+                curr.next = prev;
+                prev = curr;
+                curr = temp;
+            }
+
+            Node temp = head;
+            head = tail;
+            tail = temp;
+        }
     }
 
     public static void testLinkedList (LinkedList list) {

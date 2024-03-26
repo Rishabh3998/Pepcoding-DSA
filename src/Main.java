@@ -210,7 +210,7 @@ public class Main {
         //        list.display();
         //        list.removeLast();
         list.display();
-        list.reverseLinkedList();
+        list.reverseLinkedListOptimal();
         list.display();
     }
 }
