@@ -198,6 +198,51 @@ public class IntroLinkedList {
                 size++;
             }
         }
+
+        public void removeLast () {
+            if (size == 0) {
+                System.out.println("List is empty");
+            } else if (size == 1) {
+                head = tail = null;
+                size = 0;
+            } else {
+                Node temp = head;
+                for (int i = 0 ; i < size - 2 ; i++) {
+                    temp = temp.next;
+                }
+                tail = temp;
+                temp.next = null;
+                size--;
+            }
+        }
+
+        private Node getNodeAt (int idx) {
+            Node temp = head;
+            for (int i = 0 ; i < idx ; i++) {
+                temp = temp.next;
+            }
+            return temp;
+        }
+
+        public void reverseLinkedList () {
+            // Same 2 pointer approach that we use to reverse an array
+            // The difference here is only that: to get each pointer we have to traverse the list
+            // Time complexity: O(n ^ 2)
+            int li = 0;
+            int ri = size - 1;
+
+            while (li < ri) {
+                Node getLeft = getNodeAt(li);
+                Node getRight = getNodeAt(ri);
+
+                int temp = getLeft.data;
+                getLeft.data = getRight.data;;
+                getRight.data = temp;
+
+                li++;
+                ri--;
+            }
+        }
     }
 
     public static void testLinkedList (LinkedList list) {
