@@ -280,6 +280,64 @@ public class IntroLinkedList {
                 size--;
             }
         }
+
+        public int kthFromEnd (int k) {
+            Node slow = head;
+            Node fast = head;
+
+            for (int i = 0 ; i < k ; i++) {
+                fast = fast.next;
+            }
+
+            while(fast != tail) {
+                slow = slow.next;
+                fast = fast.next;
+            }
+
+            return slow.data;
+        }
+
+        public int middleOfLinkedList () {
+            Node slow = head;
+            Node fast = head;
+
+            while(fast.next != null && fast.next.next != null) {
+                slow = slow.next;
+                fast = fast.next.next;
+            }
+
+            return slow.data;
+        }
+
+        public static LinkedList mergeTwoSortedLL (LinkedList l1, LinkedList l2) {
+            Node p1 = l1.head;
+            Node p2 = l2.head;
+            LinkedList list = new LinkedList();
+
+            while (p1 != null && p2 != null) {
+                if(p1.data < p2.data) {
+                    list.addLast(p1.data);
+                    p1 = p1.next;
+                } else if (p2.data < p1.data) {
+                    list.addLast(p2.data);
+                    p2 = p2.next;
+                }
+            }
+
+            if (p1 != null) {
+                while (p1 != null) {
+                    list.addLast(p1.data);
+                    p1 = p1.next;
+                }
+            } else if (p2 != null) {
+                while (p2 != null) {
+                    list.addLast(p2.data);
+                    p2 = p2.next;
+                }
+            }
+
+            return list;
+        }
     }
 
     public static void testLinkedList (LinkedList list) {

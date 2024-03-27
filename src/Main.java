@@ -209,11 +209,24 @@ public class Main {
         //        list.addAt(1, 69);
         //        list.display();
         //        list.removeLast();
-        list.display();
+        //        list.display();
         //        list.reverseLinkedList();
         //        list.reverseLinkedListOptimal();
-        list.removeAt(3);
-        System.out.println();
-        list.display();
+        //        list.removeAt(3);
+        //        System.out.println();
+        //        list.display();
+        //        int result = list.kthFromEnd(2);
+        //        int result = list.middleOfLinkedList();
+        IntroLinkedList.LinkedList list2 = new IntroLinkedList.LinkedList();
+        list2.addLast(7);
+        list2.addLast(9);
+        list2.addLast(12);
+        list2.addLast(15);
+        list2.addLast(37);
+        list2.addLast(43);
+        list2.addLast(44);
+
+        IntroLinkedList.LinkedList result = IntroLinkedList.LinkedList.mergeTwoSortedLL(list, list2);
+        result.display();
     }
 }
