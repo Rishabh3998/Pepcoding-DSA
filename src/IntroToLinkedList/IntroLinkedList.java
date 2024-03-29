@@ -518,6 +518,26 @@ public class IntroLinkedList {
             reverseLLDataMemberMethodRecursiveHelper(head, 0);
         }
 
+        private boolean isPalindromeHelper (Node right, int floor) {
+            if(right == null) {
+                return true;
+            }
+            boolean res = isPalindromeHelper(right.next, floor + 1);
+            if(!res) {
+                return false;
+            } else if (pLeft.data != right.data) {
+                return false;
+            }
+            pLeft = pLeft.next;
+            return true;
+        }
+
+        Node pLeft; // Global variable will form in heap.
+        public boolean isPalindrome (Node head) {
+            pLeft = head;
+            return isPalindromeHelper(head, 0);
+        }
+
     }
 
     public static void testLinkedList (LinkedList list) {
