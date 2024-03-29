@@ -32,9 +32,9 @@ public class IntroLinkedList {
 
     public static class LinkedList {
         // Address of the head node
-        Node head;
+        public Node head;
         // Address of the tail node
-        Node tail;
+        public Node tail;
         // Size of the linked-list
         int size;
 
@@ -337,6 +337,29 @@ public class IntroLinkedList {
             }
 
             return list;
+        }
+
+        public static Node midNode (Node head, Node tail) {
+            Node slow = head;
+            Node fast = head;
+
+            while(fast != tail && fast.next != tail) {
+                slow = slow.next;
+                fast = fast.next.next;
+            }
+
+            return slow;
+        }
+        public static LinkedList mergeSortLL (Node head, Node tail) {
+            if(head == tail) {
+                LinkedList res = new LinkedList();
+                res.addLast(head.data);
+                return res;
+            }
+            Node mid = midNode(head, tail);
+            LinkedList l1 = mergeSortLL(head, mid);
+            LinkedList l2 = mergeSortLL(mid.next, tail);
+            return LinkedList.mergeTwoSortedLL(l1, l2);
         }
     }
 

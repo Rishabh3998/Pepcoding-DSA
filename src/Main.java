@@ -190,11 +190,13 @@ public class Main {
 
         //        ----Intro to LinkedList----
         IntroLinkedList.LinkedList list = new IntroLinkedList.LinkedList();
-        list.addLast(10);
-        list.addLast(20);
-        list.addLast(30);
-        list.addLast(40);
-        list.addLast(50);
+        list.addLast(2);
+        list.addLast(7);
+        list.addLast(1);
+        list.addLast(6);
+        list.addLast(5);
+        list.addLast(3);
+        list.addLast(4);
         //        IntroLinkedList.testLinkedList(list);
         //        System.out.println(list.size());
         //        list.display();
@@ -217,16 +219,19 @@ public class Main {
         //        list.display();
         //        int result = list.kthFromEnd(2);
         //        int result = list.middleOfLinkedList();
-        IntroLinkedList.LinkedList list2 = new IntroLinkedList.LinkedList();
-        list2.addLast(7);
-        list2.addLast(9);
-        list2.addLast(12);
-        list2.addLast(15);
-        list2.addLast(37);
-        list2.addLast(43);
-        list2.addLast(44);
+        //        IntroLinkedList.LinkedList list2 = new IntroLinkedList.LinkedList();
+        //        list2.addLast(7);
+        //        list2.addLast(9);
+        //        list2.addLast(12);
+        //        list2.addLast(15);
+        //        list2.addLast(37);
+        //        list2.addLast(43);
+        //        list2.addLast(44);
 
-        IntroLinkedList.LinkedList result = IntroLinkedList.LinkedList.mergeTwoSortedLL(list, list2);
-        result.display();
+        //        IntroLinkedList.LinkedList result = IntroLinkedList.LinkedList.mergeTwoSortedLL(list, list2);
+        //        result.display();
+
+        //        IntroLinkedList.LinkedList result = IntroLinkedList.LinkedList.mergeSortLL(list.head, list.tail);
+        //        result.display();
     }
 }
