@@ -361,6 +361,144 @@ public class IntroLinkedList {
             LinkedList l2 = mergeSortLL(mid.next, tail);
             return LinkedList.mergeTwoSortedLL(l1, l2);
         }
+
+        public void removeDuplicates (LinkedList list) {
+            LinkedList res = new LinkedList();
+
+            while(this.size() > 0) {
+                int val = this.getFirst();
+                this.removeFirst();
+                if(res.size() == 0 || res.tail.data != val) {
+                    res.addLast(val);
+                }
+            }
+
+            this.head = res.head;
+            this.tail = res.tail;
+            this.size = res.size;
+        }
+
+        public void oddEvenLL (LinkedList list) {
+            //  Mine:
+
+            //  LinkedList res = new LinkedList();
+            //     Node curr = this.head;
+            //
+            //     while (curr != null) {
+            //         int val = curr.data;
+            //         if (val % 2 != 0) {
+            //             res.addLast(val);
+            //         }
+            //         curr = curr.next;
+            //      }
+            //
+            //      curr = this.head;
+            //
+            //      while (curr != null) {
+            //          int val = curr.data;
+            //          if (val % 2 == 0) {
+            //              res.addLast(val);
+            //          }
+            //          curr = curr.next;
+            //      }
+            //
+            //      this.head = res.head;
+            //      this.tail = res.tail;
+            //      this.size = res.size;
+
+            // Pep-coding:
+
+            LinkedList odd = new LinkedList();
+            LinkedList even = new LinkedList();
+
+            while(this.size() > 0) {
+                int val = this.getFirst();
+                this.removeFirst();
+                if(val % 2 == 0) {
+                    even.addLast(val);
+                } else {
+                    odd.addLast(val);
+                }
+            }
+
+            if(odd.size() > 0 && even.size() > 0) {
+                this.head = odd.head;
+                odd.tail.next = even.head;
+                this.tail = even.tail;
+                this.size = odd.size + even.size;
+            }
+            else if (odd.size() > 0) {
+                this.head = odd.head;
+                this.tail = odd.tail;
+                this.size = odd.size;
+            } else if (even.size() > 0){
+                this.head = even.head;
+                this.tail = even.tail;
+                this.size = even.size;
+            }
+        }
+
+        public void KReverse (LinkedList list, int k) {
+            LinkedList prev = null;
+
+            while (this.size() > 0) {
+                LinkedList curr = new LinkedList();
+
+                if (this.size() >= k) {
+                    for (int i = 0 ; i < k ; i++) {
+                        int val = this.getFirst();
+                        this.removeFirst();
+                        curr.addFirst(val);
+                    }
+                } else {
+                    int size = this.size();
+                    for (int i = 0 ; i < size ; i++) {
+                        int val = this.getFirst();
+                        this.removeFirst();
+                        curr.addLast(val);
+                    }
+                }
+
+                if (prev == null) {
+                    prev = curr;
+                } else {
+                    prev.tail.next = curr.head;
+                    prev.tail = curr.tail;
+                    prev.size += curr.size;
+                }
+            }
+
+            this.head = prev.head;
+            this.tail = prev.tail;
+            this.size = prev.size;
+        }
+        public void reverseDisplayRecursion (Node node ) {
+            if(node == null) {
+                return;
+            }
+            reverseDisplayRecursion(node.next);
+            System.out.println(node.data);
+        }
+
+        private void reverseLLPointerMethodRecursiveHelper (Node node) {
+            if(node == null) {
+                return;
+            }
+            reverseLLPointerMethodRecursiveHelper(node.next);
+
+            if (node != tail) {
+                node.next.next = node;
+            }
+        }
+
+        public void reverseLLPointerMethodRecursive (Node head) {
+            reverseLLPointerMethodRecursiveHelper(head);
+            head.next = null;
+            Node temp = head;
+            head = tail;
+            tail = temp;
+        }
+
     }
 
     public static void testLinkedList (LinkedList list) {
