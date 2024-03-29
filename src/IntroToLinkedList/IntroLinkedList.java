@@ -499,6 +499,25 @@ public class IntroLinkedList {
             tail = temp;
         }
 
+        private void reverseLLDataMemberMethodRecursiveHelper (Node right, int floor) {
+            if(right == null) {
+                return;
+            }
+            reverseLLDataMemberMethodRecursiveHelper(right.next, floor + 1);
+            if (floor >= size/2) {
+                int temp = right.data;
+                right.data = rLeft.data;
+                rLeft.data = temp;
+                rLeft = rLeft.next;
+            }
+        }
+
+        Node rLeft; // Global variable will form in heap.
+        public void reverseLLDataMemberMethodRecursive (Node head) {
+            rLeft = head;
+            reverseLLDataMemberMethodRecursiveHelper(head, 0);
+        }
+
     }
 
     public static void testLinkedList (LinkedList list) {

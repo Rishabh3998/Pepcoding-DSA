@@ -242,5 +242,6 @@ public class Main {
         //        list.KReverse(list, 3);
         //        list.reverseDisplayRecursion(list.head);
         //        list.reverseLLPointerMethodRecursive(list.head);
+        //        list.reverseLLDataMemberMethodRecursive(list.head);
     }
 }
