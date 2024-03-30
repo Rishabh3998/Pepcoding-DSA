@@ -190,16 +190,17 @@ public class Main {
         //        IntroArrayList.ArrayListIntroduction();
 
         //        ----Intro to LinkedList----
-        IntroLinkedList.LinkedList list = new IntroLinkedList.LinkedList();
-        list.addLast(9);
-        list.addLast(9);
-        list.addLast(9);
+        //        IntroLinkedList.LinkedList list = new IntroLinkedList.LinkedList();
+        //        list.addLast(9);
+        //        list.addLast(9);
+        //        list.addLast(9);
 
         //        IntroLinkedList.LinkedList list2 = new IntroLinkedList.LinkedList();
         //        list2.addLast(1);
         //        list2.addLast(0);
         //        list2.addLast(0);
         //        list2.addLast(0);
+
         //        IntroLinkedList.testLinkedList(list);
         //        System.out.println(list.size());
         //        list.display();
