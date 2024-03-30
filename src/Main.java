@@ -12,6 +12,7 @@ import IntroToArrays.Arrays;
 import Patterns.PatternsPractice;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Main {
@@ -190,16 +191,15 @@ public class Main {
 
         //        ----Intro to LinkedList----
         IntroLinkedList.LinkedList list = new IntroLinkedList.LinkedList();
-        list.addLast(1);
-        list.addLast(2);
-        list.addLast(3);
-        list.addLast(4);
-        list.addLast(5);
-//        list.addLast(6);
-//        list.addLast(7);
-//        list.addLast(8);
-//        list.addLast(9);
-//        list.addLast(10);
+        list.addLast(9);
+        list.addLast(9);
+        list.addLast(9);
+
+        //        IntroLinkedList.LinkedList list2 = new IntroLinkedList.LinkedList();
+        //        list2.addLast(1);
+        //        list2.addLast(0);
+        //        list2.addLast(0);
+        //        list2.addLast(0);
         //        IntroLinkedList.testLinkedList(list);
         //        System.out.println(list.size());
         //        list.display();
@@ -244,8 +244,9 @@ public class Main {
         //        list.reverseLLPointerMethodRecursive(list.head);
         //        list.reverseLLDataMemberMethodRecursive(list.head);
         //        boolean res = list.isPalindrome(list.head);
-        list.foldLL(list.head);
-        list.display();
+        //        list.foldLL(list.head);
+        //        IntroLinkedList.LinkedList res = IntroLinkedList.LinkedList.addTwoLinkedList(list, list2);
+        //        res.display();
         //        System.out.println(res);
     }
 }

@@ -560,6 +560,59 @@ public class IntroLinkedList {
             foldLLHelper(head, 0);
         }
 
+        public static int addTwoLinkedListHelper (Node one, int pv1, Node two , int pv2, LinkedList result) {
+            if(one == null && two == null) {
+                return 0;
+            }
+            int data = 0;
+            if (pv1 > pv2) {
+                int oc = addTwoLinkedListHelper(one.next, pv1 - 1, two, pv2, result);
+                data = one.data + oc;
+            } else if (pv1 < pv2) {
+                int oc = addTwoLinkedListHelper(one, pv1, two.next, pv2 - 1, result);
+                data = two.data + oc;
+            } else {
+                int oc = addTwoLinkedListHelper(one.next, pv1 - 1, two.next, pv2 - 1, result);
+                data = one.data + two.data + oc;
+            }
+            int nd = data % 10;
+            int nc = data / 10;
+            result.addFirst(nd);
+            return nc;
+        }
+
+        public static LinkedList addTwoLinkedList (LinkedList list1, LinkedList list2) {
+            LinkedList res = new LinkedList();
+            int oc = addTwoLinkedListHelper(list1.head, list1.size, list2.head, list2.size, res);
+            if (oc > 0) {
+                res.addFirst(oc);
+            }
+            return res;
+        }
+
+        public static int intersectionPoint (LinkedList list1, LinkedList list2) {
+            Node temp1 = list1.head;
+            Node temp2 = list2.head;
+
+            if (list1.size > list2.size) {
+                int delta = list1.size - list2.size;
+                for (int i = 0 ; i < delta ; i++) {
+                    temp1 = temp1.next;
+                }
+            } else if (list2.size > list1.size) {
+                int delta = list2.size - list1.size;
+                for (int i = 0 ; i < delta ; i++) {
+                    temp2 = temp2.next;
+                }
+            }
+
+            while (temp1.data != temp2.data) {
+                temp1 = temp1.next;
+                temp2 = temp2.next;
+            }
+
+            return temp1.data;
+        }
     }
 
     public static void testLinkedList (LinkedList list) {
