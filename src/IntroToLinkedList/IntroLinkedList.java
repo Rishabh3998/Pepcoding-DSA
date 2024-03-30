@@ -538,6 +538,28 @@ public class IntroLinkedList {
             return isPalindromeHelper(head, 0);
         }
 
+        private void foldLLHelper (Node right, int floor) {
+            if(right == null) {
+                return;
+            }
+            foldLLHelper(right.next, floor + 1);
+            if (floor > size / 2) {
+                Node temp = fLeft.next;
+                right.next = fLeft.next;
+                fLeft.next = right;
+                fLeft = temp;
+            } else if (floor == size / 2) {
+                tail = right;
+                tail.next = null;
+            }
+        }
+
+        Node fLeft;
+        public void foldLL (Node head) {
+            fLeft = head;
+            foldLLHelper(head, 0);
+        }
+
     }
 
     public static void testLinkedList (LinkedList list) {
