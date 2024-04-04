@@ -1,5 +1,6 @@
 package IntroStacks;
 
+import java.util.Scanner;
 import java.util.Stack;
 
 public class Stacks {
@@ -13,7 +14,7 @@ public class Stacks {
     // Internal Stack
 
     public static void myStack () {
-    Stack<Integer> st = new Stack<>();
+        Stack<Integer> st = new Stack<>();
         st.push(10);
         st.push(20);
         st.push(30);
@@ -22,7 +23,31 @@ public class Stacks {
         st.pop();
         System.out.println(st);
         System.out.println(st.peek());
+        System.out.println("size " + st.size());
         st.pop();
         System.out.println(st);
+    }
+
+    public static void duplicateBrackets () {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        Stack<Character> st = new Stack<>();
+        for (int i = 0 ; i < str.length() ; i++) {
+            char c = str.charAt(i);
+            if (c == ')') {
+                if (st.peek() == '(') {
+                    System.out.println("true");
+                    return;
+                } else {
+                    while (st.peek() != '(') {
+                        st.pop();
+                    }
+                    st.pop();
+                }
+            } else {
+               st.push(c);
+            }
+        }
+        System.out.println("false");
     }
 }

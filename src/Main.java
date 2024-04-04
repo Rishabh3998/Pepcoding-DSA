@@ -251,6 +251,8 @@ public class Main {
         //        res.display();
         //        System.out.println(res);
 
-        Stacks.myStack();
+        //        ---- Intro to Stacks ----
+        //        Stacks.myStack();
+        Stacks.duplicateBrackets();
     }
 }
