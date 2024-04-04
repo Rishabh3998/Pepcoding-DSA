@@ -10,6 +10,7 @@ import IntroToStrings.IntroStrings;
 import IntroductionToFunctions.Functions;
 import IntroToArrays.Arrays;
 import Patterns.PatternsPractice;
+import IntroStacks.Stacks;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -249,5 +250,7 @@ public class Main {
         //        IntroLinkedList.LinkedList res = IntroLinkedList.LinkedList.addTwoLinkedList(list, list2);
         //        res.display();
         //        System.out.println(res);
+
+        Stacks.myStack();
     }
 }
