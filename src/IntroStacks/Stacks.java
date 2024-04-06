@@ -50,4 +50,55 @@ public class Stacks {
         }
         System.out.println("false");
     }
+
+    public static void balancedBrackets () {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+
+        Stack<Character> st = new Stack<>();
+        for (int i = 0 ; i < str.length() ; i++) {
+            char c = str.charAt(i);
+            if (c == '(' || c == '{' || c == '[') {
+               st.push(c);
+            } else if (c == ')') {
+                if (st.isEmpty()) {
+                    System.out.println("false");
+                    return;
+                } else if (st.peek() != '(' ) {
+                    System.out.println("false");
+                    return;
+                } else {
+                    st.pop();
+                }
+            }  else if (c == '}') {
+                if (st.isEmpty()) {
+                    System.out.println("false");
+                    return;
+                } else if (st.peek() != '{' ) {
+                    System.out.println("false");
+                    return;
+                } else {
+                    st.pop();
+                }
+            }  else if (c == ']') {
+                if (st.isEmpty()) {
+                    System.out.println("false");
+                    return;
+                } else if (st.peek() != '[' ) {
+                    System.out.println("false");
+                    return;
+                } else {
+                    st.pop();
+                }
+            } else {
+
+            }
+        }
+
+        if (st.isEmpty()) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
+    }
 }
