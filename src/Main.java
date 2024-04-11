@@ -254,5 +254,10 @@ public class Main {
         //        ---- Intro to Stacks ----
         //        Stacks.myStack();
         //        Stacks.duplicateBrackets();
+        //        Stacks.balancedBrackets();
+        //        int[] res = Stacks.nextGreaterElement();
+        //        for (int i = 0 ; i <  res.length ; i++) {
+        //            System.out.println(res[i]);
+        //        }
     }
 }

@@ -101,4 +101,35 @@ public class Stacks {
             System.out.println("false");
         }
     }
+
+    public static int[] nextGreaterElement () {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt(); // size of array
+        int[] arr = new int[n];
+
+        int[] res = new int[n];
+
+        Stack<Integer> st = new Stack<>();
+        for (int i = 0 ; i < arr.length ; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        st.push(arr[arr.length - 1]);
+        res[arr.length - 1] = -1;
+
+        for (int i = arr.length - 2 ; i >= 0 ; i--) {
+            while (!st.isEmpty() && arr[i] >= st.peek()) {
+                st.pop();
+            }
+
+            if(st.isEmpty()) {
+                res[i] = -1;
+            } else {
+                res[i] = st.peek();
+            }
+            st.push(arr[i]);
+        }
+
+        return res;
+    }
 }
